@@ -113,10 +113,10 @@ export function Receipt() {
                 <div className="flex-1">
                   <p className="font-medium text-gray-900">{item.name}</p>
                   <p className="text-sm text-gray-600">
-                    {item.qty} x {formatPrice(item.unitPrice)}
+                    <span className="font-numeric">{item.qty}</span> x <span className="font-numeric">{formatPrice(item.unitPrice)}</span>
                   </p>
                 </div>
-                <span className="font-semibold text-gray-900">
+                <span className="font-semibold text-gray-900 font-numeric">
                   {formatPrice(item.lineTotal)}
                 </span>
               </div>
@@ -127,7 +127,7 @@ export function Receipt() {
         <div className="border-t border-gray-200 pt-4">
           <div className="flex justify-between text-xl font-bold text-gray-900">
             <span>Total</span>
-            <span>{formatPrice(receipt.total)}</span>
+            <span className="font-numeric">{formatPrice(receipt.total)}</span>
           </div>
         </div>
       </div>

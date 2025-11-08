@@ -94,7 +94,7 @@ export function ProductCard({
 
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="text-xl font-bold text-primary-600">
+            <span className="text-xl font-bold text-primary-600 font-numeric">
               {priceLabel}
             </span>
           </div>
@@ -109,7 +109,7 @@ export function ProductCard({
               >
                 <Minus className="w-4 h-4" />
               </button>
-              <span className="w-8 text-center font-semibold">{quantity}</span>
+              <span className="w-8 text-center font-semibold font-numeric">{quantity}</span>
               <button
                 onClick={() => handleUpdateQuantity(quantity + 1)}
                 disabled={isAdding}

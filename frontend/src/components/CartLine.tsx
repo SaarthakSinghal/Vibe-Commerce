@@ -63,7 +63,7 @@ export function CartLine({ item }: CartLineProps) {
       <div className="flex-1">
         <h4 className="font-semibold text-gray-900">{item.name}</h4>
         <p className="text-sm text-gray-600">
-          {rateLoading ? 'Loading...' : `${formatMoney(unitPrice, displayCurrency)} each`}
+          {rateLoading ? 'Loading...' : <span className="font-numeric">{`${formatMoney(unitPrice, displayCurrency)} each`}</span>}
         </p>
       </div>
       <div className="flex items-center gap-2">
@@ -74,7 +74,7 @@ export function CartLine({ item }: CartLineProps) {
         >
           <Minus className="w-4 h-4" />
         </button>
-        <span className="w-8 text-center font-medium">{item.qty}</span>
+        <span className="w-8 text-center font-medium font-numeric">{item.qty}</span>
         <button
           onClick={() => handleUpdateQuantity(item.qty + 1)}
           disabled={isUpdating}
@@ -84,7 +84,7 @@ export function CartLine({ item }: CartLineProps) {
         </button>
       </div>
       <div className="w-24 text-right">
-        <div className="font-semibold text-gray-900">
+        <div className="font-semibold text-gray-900 font-numeric">
           {rateLoading ? 'Loading...' : formatMoney(lineTotal, displayCurrency)}
         </div>
       </div>

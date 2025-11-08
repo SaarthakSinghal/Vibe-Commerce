@@ -139,7 +139,9 @@ export function Checkout() {
                   Processing...
                 </>
               ) : (
-                `Place Order - ${rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}`
+                <span className="font-numeric">
+                  {`Place Order - ${rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}`}
+                </span>
               )}
             </button>
           </form>
@@ -154,9 +156,9 @@ export function Checkout() {
                 <div key={item.productId} className="flex justify-between text-sm">
                   <div className="flex-1">
                     <p className="font-medium text-gray-900">{item.name}</p>
-                    <p className="text-gray-600">Qty: {item.qty}</p>
+                    <p className="text-gray-600">Qty: <span className="font-numeric">{item.qty}</span></p>
                   </div>
-                  <span className="font-medium text-gray-900">
+                  <span className="font-medium text-gray-900 font-numeric">
                     {rateLoading ? 'Loading...' : formatMoney(item.lineTotal * rate, displayCurrency)}
                   </span>
                 </div>
@@ -166,7 +168,7 @@ export function Checkout() {
             <div className="border-t border-gray-200 pt-4">
               <div className="flex justify-between text-lg font-bold text-gray-900">
                 <span>Total</span>
-                <span>{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
+                <span className="font-numeric">{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
               </div>
             </div>
           </div>

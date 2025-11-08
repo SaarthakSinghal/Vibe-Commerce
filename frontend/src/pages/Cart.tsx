@@ -82,7 +82,7 @@ export function Cart() {
             <div className="space-y-3 mb-6">
               <div className="flex justify-between text-gray-600">
                 <span>Subtotal</span>
-                <span>{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
+                <span className="font-numeric">{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
               </div>
               <div className="flex justify-between text-gray-600">
                 <span>Shipping</span>
@@ -91,7 +91,7 @@ export function Cart() {
               <div className="border-t border-gray-200 pt-3">
                 <div className="flex justify-between text-lg font-bold text-gray-900">
                   <span>Total</span>
-                  <span>{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
+                  <span className="font-numeric">{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
                 </div>
               </div>
             </div>
