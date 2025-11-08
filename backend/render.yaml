@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: vibe-commerce-backend
+    env: node
+    plan: free
+    buildCommand: cd /opt/render/project/src/backend && npm install && npm run build
+    startCommand: cd /opt/render/project/src/backend && npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "18"
+      - key: PORT
+        value: 10000
+      - key: MOCK_USER_ID
+        value: mock-user-123
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: USE_FAKE_STORE
+        value: "true"

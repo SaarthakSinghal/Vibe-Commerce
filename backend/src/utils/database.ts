@@ -6,13 +6,15 @@ export const connectDB = async (): Promise<void> => {
   let mongoServer: MongoMemoryServer | undefined;
 
   // Check if we should use in-memory MongoDB for development
-  if (process.env.USE_FAKE_STORE === 'true' || !process.env.MONGODB_URI?.includes('mongodb://localhost')) {
-    // Start in-memory MongoDB server
+  if (process.env.USE_FAKE_STORE === 'true') {
+    // Start in-memory MongoDB server only when explicitly using fake store
     mongoServer = await MongoMemoryServer.create();
     mongoUri = mongoServer.getUri();
     console.log('Starting in-memory MongoDB server');
   } else {
+    // Use real MongoDB database (MongoDB Atlas or local)
     mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/vibe-commerce';
+    console.log('Using real MongoDB database');
   }
 
   try {
