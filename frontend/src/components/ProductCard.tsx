@@ -77,14 +77,14 @@ export function ProductCard({
   };
 
   return (
-    <div className="card group hover:shadow-md transition-shadow">
+    <div className="card group">
       <div className="aspect-square overflow-hidden">
         <img
           src={product.imageUrl}
           alt={product.name}
           loading="lazy"
           decoding="async"
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-150"
         />
       </div>
 
