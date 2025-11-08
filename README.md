@@ -2,7 +2,8 @@
 
 A production-like, minimal e-commerce shopping cart application built with React, Node.js, and MongoDB. Features a complete shopping experience from product browsing to checkout with mock payments.
 
-![Vibe Commerce](https://via.placeholder.com/800x400?text=Vibe+Commerce+Screenshot)
+<img width="1917" height="857" alt="image" src="https://github.com/user-attachments/assets/78f2ac0f-dfb6-4d45-a493-76e668c985cb" />
+
 
 ## ✨ Features
 
