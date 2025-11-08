@@ -1,6 +1,7 @@
 import { Product, Cart, Receipt, AddToCartInput, CheckoutInput } from '@/types/api';
 
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ?? 'http://localhost:5001/api';
 
 async function handleResponse<T>(response: Response): Promise<T> {
   const data = await response.json();
