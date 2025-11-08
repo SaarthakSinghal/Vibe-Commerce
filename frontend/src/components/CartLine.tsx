@@ -54,15 +54,15 @@ export function CartLine({ item }: CartLineProps) {
   const lineTotal = item.lineTotal * rate;
 
   return (
-    <div className="flex items-center gap-4 p-4 border-b border-gray-200 last:border-b-0">
+    <div className="flex items-center gap-4 p-4 border-b border-gray-700 last:border-b-0">
       <img
         src={item.imageUrl}
         alt={item.name}
         className="w-20 h-20 object-cover rounded-lg"
       />
       <div className="flex-1">
-        <h4 className="font-semibold text-gray-900">{item.name}</h4>
-        <p className="text-sm text-gray-600">
+        <h4 className="font-semibold text-gray-100">{item.name}</h4>
+        <p className="text-sm text-gray-300">
           {rateLoading ? 'Loading...' : <span className="font-numeric">{`${formatMoney(unitPrice, displayCurrency)} each`}</span>}
         </p>
       </div>
@@ -70,28 +70,28 @@ export function CartLine({ item }: CartLineProps) {
         <button
           onClick={() => handleUpdateQuantity(item.qty - 1)}
           disabled={isUpdating}
-          className="p-1 rounded-lg hover:bg-gray-100 disabled:opacity-50"
+          className="p-1 rounded-lg hover:bg-gray-700 disabled:opacity-50"
         >
-          <Minus className="w-4 h-4" />
+          <Minus className="w-4 h-4 text-gray-200" />
         </button>
-        <span className="w-8 text-center font-medium font-numeric">{item.qty}</span>
+        <span className="w-8 text-center font-medium font-numeric text-gray-100">{item.qty}</span>
         <button
           onClick={() => handleUpdateQuantity(item.qty + 1)}
           disabled={isUpdating}
-          className="p-1 rounded-lg hover:bg-gray-100 disabled:opacity-50"
+          className="p-1 rounded-lg hover:bg-gray-700 disabled:opacity-50"
         >
-          <Plus className="w-4 h-4" />
+          <Plus className="w-4 h-4 text-gray-200" />
         </button>
       </div>
       <div className="w-24 text-right">
-        <div className="font-semibold text-gray-900 font-numeric">
+        <div className="font-semibold text-gray-100 font-numeric">
           {rateLoading ? 'Loading...' : formatMoney(lineTotal, displayCurrency)}
         </div>
       </div>
       <button
         onClick={handleRemove}
         disabled={isUpdating}
-        className="p-2 text-gray-400 hover:text-red-600 disabled:opacity-50"
+        className="p-2 text-gray-400 hover:text-red-400 disabled:opacity-50"
       >
         {isUpdating ? (
           <Loader2 className="w-5 h-5 animate-spin" />

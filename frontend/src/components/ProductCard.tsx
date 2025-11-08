@@ -89,12 +89,12 @@ export function ProductCard({
       </div>
 
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-1">{product.name}</h3>
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2">{product.description}</p>
+        <h3 className="text-lg font-semibold text-gray-100 mb-1 line-clamp-1">{product.name}</h3>
+        <p className="text-sm text-gray-300 mb-3 line-clamp-2">{product.description}</p>
 
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
-            <span className="text-xl font-bold text-primary-600 font-numeric">
+            <span className="text-xl font-bold text-primary-400 font-numeric">
               {priceLabel}
             </span>
           </div>
@@ -104,19 +104,19 @@ export function ProductCard({
               <button
                 onClick={() => handleUpdateQuantity(quantity - 1)}
                 disabled={isAdding}
-                className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-busy={isAdding}
               >
-                <Minus className="w-4 h-4" />
+                <Minus className="w-4 h-4 text-gray-200" />
               </button>
-              <span className="w-8 text-center font-semibold font-numeric">{quantity}</span>
+              <span className="w-8 text-center font-semibold font-numeric text-gray-100">{quantity}</span>
               <button
                 onClick={() => handleUpdateQuantity(quantity + 1)}
                 disabled={isAdding}
-                className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-busy={isAdding}
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="w-4 h-4 text-gray-200" />
               </button>
             </div>
           ) : (

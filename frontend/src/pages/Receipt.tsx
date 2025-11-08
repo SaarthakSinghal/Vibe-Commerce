@@ -58,8 +58,8 @@ export function Receipt() {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center">
-          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-primary-600" />
-          <p className="text-gray-600">Loading receipt...</p>
+          <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4 text-primary-400" />
+          <p className="text-gray-300">Loading receipt...</p>
         </div>
       </div>
     );
@@ -69,8 +69,8 @@ export function Receipt() {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Receipt not found</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="text-2xl font-bold text-gray-100 mb-2">Receipt not found</h2>
+          <p className="text-gray-300 mb-6">
             We couldn't find the receipt you're looking for
           </p>
           <Link to="/" className="btn btn-primary">
@@ -84,21 +84,21 @@ export function Receipt() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="text-center mb-8">
-        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Order Confirmed!</h1>
-        <p className="text-gray-600">Thank you for your purchase</p>
+        <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
+        <h1 className="text-3xl font-bold text-gray-100 mb-2">Order Confirmed!</h1>
+        <p className="text-gray-300">Thank you for your purchase</p>
       </div>
 
       <div className="card p-6 mb-6">
-        <div className="border-b border-gray-200 pb-4 mb-4">
+        <div className="border-b border-gray-700 pb-4 mb-4">
           <div className="flex justify-between items-start">
             <div>
-              <h2 className="text-lg font-semibold text-gray-900">Order ID</h2>
-              <p className="text-sm text-gray-600 mt-1">{receipt.orderId}</p>
+              <h2 className="text-lg font-semibold text-gray-100">Order ID</h2>
+              <p className="text-sm text-gray-300 mt-1">{receipt.orderId}</p>
             </div>
             <div className="text-right">
-              <h2 className="text-lg font-semibold text-gray-900">Date</h2>
-              <p className="text-sm text-gray-600 mt-1">
+              <h2 className="text-lg font-semibold text-gray-100">Date</h2>
+              <p className="text-sm text-gray-300 mt-1">
                 {formatDate(receipt.timestamp)}
               </p>
             </div>
@@ -106,17 +106,17 @@ export function Receipt() {
         </div>
 
         <div className="mb-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Items</h3>
+          <h3 className="text-lg font-semibold text-gray-100 mb-3">Items</h3>
           <div className="space-y-3">
             {receipt.items.map((item, index) => (
               <div key={index} className="flex justify-between items-center">
                 <div className="flex-1">
-                  <p className="font-medium text-gray-900">{item.name}</p>
-                  <p className="text-sm text-gray-600">
+                  <p className="font-medium text-gray-100">{item.name}</p>
+                  <p className="text-sm text-gray-300">
                     <span className="font-numeric">{item.qty}</span> x <span className="font-numeric">{formatPrice(item.unitPrice)}</span>
                   </p>
                 </div>
-                <span className="font-semibold text-gray-900 font-numeric">
+                <span className="font-semibold text-gray-100 font-numeric">
                   {formatPrice(item.lineTotal)}
                 </span>
               </div>
@@ -124,8 +124,8 @@ export function Receipt() {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-4">
-          <div className="flex justify-between text-xl font-bold text-gray-900">
+        <div className="border-t border-gray-700 pt-4">
+          <div className="flex justify-between text-xl font-bold text-gray-100">
             <span>Total</span>
             <span className="font-numeric">{formatPrice(receipt.total)}</span>
           </div>
@@ -133,12 +133,12 @@ export function Receipt() {
       </div>
 
       <div className="card p-6 mb-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">Customer Information</h3>
+        <h3 className="text-lg font-semibold text-gray-100 mb-3">Customer Information</h3>
         <div className="space-y-1">
-          <p className="text-gray-700">
+          <p className="text-gray-200">
             <span className="font-medium">Name:</span> {receipt.customer.name}
           </p>
-          <p className="text-gray-700">
+          <p className="text-gray-200">
             <span className="font-medium">Email:</span> {receipt.customer.email}
           </p>
         </div>

@@ -51,7 +51,7 @@ export function Cart() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
           <ShoppingCart className="w-16 h-16 mx-auto mb-4 text-gray-400" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h2>
+          <h2 className="text-2xl font-bold text-gray-400 mb-2">Your cart is empty</h2>
           <p className="text-gray-600 mb-6">
             Add some products to get started
           </p>
@@ -78,32 +78,34 @@ export function Cart() {
 
         <div className="lg:col-span-1">
           <div className="card p-6 sticky top-4">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Order Summary</h2>
+            <h2 className="text-xl font-bold text-gray-200 mb-4">Order Summary</h2>
             <div className="space-y-3 mb-6">
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between text-gray-400">
                 <span>Subtotal</span>
                 <span className="font-numeric">{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
               </div>
-              <div className="flex justify-between text-gray-600">
+              <div className="flex justify-between text-gray-400">
                 <span>Shipping</span>
                 <span className="text-green-600">Free</span>
               </div>
               <div className="border-t border-gray-200 pt-3">
-                <div className="flex justify-between text-lg font-bold text-gray-900">
+                <div className="flex justify-between text-lg font-bold text-gray-200">
                   <span>Total</span>
                   <span className="font-numeric">{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
                 </div>
               </div>
             </div>
-            <Link to="/checkout" className="btn btn-primary w-full">
-              Proceed to Checkout
-            </Link>
-            <Link
-              to="/"
-              className="btn btn-outline w-full mt-3"
-            >
-              Continue Shopping
-            </Link>
+            <div className="flex flex-col space-y-3">
+              <Link to="/checkout" className="btn btn-primary text-center w-full">
+                Proceed to Checkout
+              </Link>
+              <Link
+                to="/"
+                className="btn btn-outline text-center w-full"
+              >
+                Continue Shopping
+              </Link>
+            </div>
           </div>
         </div>
       </div>

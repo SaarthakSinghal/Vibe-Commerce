@@ -63,8 +63,8 @@ export function Checkout() {
     return (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h2>
-          <p className="text-gray-600 mb-6">
+          <h2 className="text-2xl font-bold text-gray-100 mb-2">Your cart is empty</h2>
+          <p className="text-gray-300 mb-6">
             Add some products before checking out
           </p>
           <Link to="/" className="btn btn-primary">
@@ -80,23 +80,23 @@ export function Checkout() {
       <div className="mb-6">
         <Link
           to="/cart"
-          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900"
+          className="inline-flex items-center text-sm text-gray-300 hover:text-white"
         >
           <ArrowLeft className="w-4 h-4 mr-1" />
           Back to Cart
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
+      <h1 className="text-3xl font-bold text-gray-100 mb-8">Checkout</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <form onSubmit={handleSubmit(onSubmit)} className="card p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Shipping Information</h2>
+            <h2 className="text-xl font-bold text-gray-100 mb-4">Shipping Information</h2>
 
             <div className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-1">
                   Full Name
                 </label>
                 <input
@@ -107,12 +107,12 @@ export function Checkout() {
                   placeholder="John Doe"
                 />
                 {errors.name && (
-                  <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                  <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
                 )}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1">
                   Email Address
                 </label>
                 <input
@@ -123,7 +123,7 @@ export function Checkout() {
                   placeholder="john@example.com"
                 />
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                  <p className="mt-1 text-sm text-red-400">{errors.email.message}</p>
                 )}
               </div>
             </div>
@@ -149,24 +149,24 @@ export function Checkout() {
 
         <div className="lg:col-span-1">
           <div className="card p-6 sticky top-4">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Order Summary</h2>
+            <h2 className="text-xl font-bold text-gray-100 mb-4">Order Summary</h2>
 
             <div className="space-y-3 mb-4 max-h-60 overflow-y-auto">
               {cart.items.map((item) => (
                 <div key={item.productId} className="flex justify-between text-sm">
                   <div className="flex-1">
-                    <p className="font-medium text-gray-900">{item.name}</p>
-                    <p className="text-gray-600">Qty: <span className="font-numeric">{item.qty}</span></p>
+                    <p className="font-medium text-gray-100">{item.name}</p>
+                    <p className="text-gray-300">Qty: <span className="font-numeric">{item.qty}</span></p>
                   </div>
-                  <span className="font-medium text-gray-900 font-numeric">
+                  <span className="font-medium text-gray-100 font-numeric">
                     {rateLoading ? 'Loading...' : formatMoney(item.lineTotal * rate, displayCurrency)}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="border-t border-gray-200 pt-4">
-              <div className="flex justify-between text-lg font-bold text-gray-900">
+            <div className="border-t border-gray-700 pt-4">
+              <div className="flex justify-between text-lg font-bold text-gray-100">
                 <span>Total</span>
                 <span className="font-numeric">{rateLoading ? 'Loading...' : formatMoney(convertedTotal, displayCurrency)}</span>
               </div>
